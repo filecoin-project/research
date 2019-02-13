@@ -1,5 +1,3 @@
-**Note: THE FILECOIN PROJECT IS STILL EXTREMELY CONFIDENTIAL. Do not share or discuss the project outside of designated preview channels (chat channels, Discourse forum, GitHub, emails to Filecoin team), not even with partners/spouses/family members. If you have any questions, please email legal@protocol.ai.**
-
 # Filecoin Research
 
 <img src="https://lh3.googleusercontent.com/oe0fJWHIcpXy5eFcOYLA0YFjwXnXGz4lPQv4-szxhrdxeUBKZmJJHjwsveOvkqBBfT9koSOCw8TYoNd78h4zAcpeD4UL0olne2AgwEittt54xRj8sTWBsBi3Xx4SI8DAfz-0lyhA" width="150px"> 
