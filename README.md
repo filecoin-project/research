@@ -225,7 +225,7 @@ We break down a few open problems of high priority for the team below. Some have
 
 The purpose of this repo is for Filecoin Research questions to be open to researchers around the world who may be interested in working on them.
 
-If you want to dive into these topics, please see [CONTRIBUTING.md](./contributing.md).
+If you want to dive into these topics, please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Community
 
