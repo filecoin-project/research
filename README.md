@@ -43,7 +43,7 @@ Filecoin Research work is conducted by area of focus, with current efforts ongoi
 Here is a list of the Filecoin project's research endeavours, we split them by projects for discoverability and further highlight select problems [below](#key-open-problems). We also specify scope and priority in this table, you can find exact definitions for these [here](problems-glossary.md).
 
 - [Area: Consensus](#area-consensus)
-- [Area: Filecoin Consensus](#area-filecoin-consensus)
+- [Area: Filecoin Protocol Improvements](#area-filecoin-protocol-improvements)
 - [Area: Generic Blockchain Infrastructure](#area-generic-blockchain-infrastructure)
 - [Area: Primitives](#area-primitives)
 
