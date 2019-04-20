@@ -222,6 +222,10 @@ We break down a few open problems of high priority for the team below. Some have
 
 [See our open problems](./open-problems.md).
 
+You can also check out slides from talks given about Research Problems in Filecoin:
+- [Filecoin: Open Problems building storage-based consensus](https://drive.google.com/a/protocol.ai/file/d/1TeoRVRTDzMvPfYbty0WZ_V75zIyHinke/view?usp=sharing) given by Henri Stern at EPFL Crypto WinterSchool in February 2019.
+- [Filecoin Research Problems](https://drive.google.com/a/protocol.ai/file/d/16-74tC09jJeMdgXgKukmTHtmyTGHFkI3/view?usp=sharing) given by Nicola Greco at IC3 Winter Retreat in February 2019.
+
 ## Contributing
 
 The purpose of this repo is for Filecoin Research questions to be open to researchers around the world who may be interested in working on them.
