@@ -1,15 +1,15 @@
-# Idea: Jury Trial for guaranteed price and fair delivery
+# Idea: Proof of Delivery and Guaranteed Retrieval Price
 
 - Author: Nicola Greco
 
-- historical note: This is a proposal which I have written down just before our lab week in Crete and based on work on "Probabilistic Trust" I have done at MIT. I was asked to write the Fair Delivery protocol down as an answer to "how do we guarantee retrieval price?". Just for reference, we call Jury Trial any protocol that samples from a population of 51% honesty.
+- Historical note: Proposal written in 2017Q4 based on some work that Nicola did at MIT on Jury Trials/Probabilistic trust. The main purpose of this document is to try to answer the question "how do we guarantee retrieval price in Filecoin?". Just for reference, we call Jury Trial any protocol that samples from a population of 51% honesty.
 
 ---
 
-the plan:
-- In order to have guaranteed pricing, we need to be able to write "file contracts" that mentions the price and penalize the retrieval miners that promise to serve the files, but they don't.
-- In order to penalize miners, we need to have a proof that they have delivered (or not delivered) a file to a client that is requesting it.
-- So, I will explain in order:
+The plan:
+- In order to have guaranteed retrieval price in Filecoin, we need to be able to write "file contracts" that mentions an agreed upon price and penalization in case the storage provider is not serving the file.
+- In order to penalize miners, we need to have a proof that they have not delivered a file to a client that is requesting it (or a proof that the file was delivered).
+- So, we will explain in order:
   - the problem of guaranteed delivery and how we go around in filecoin
   - how to extend guaranteed delivery to guaranteed delivery with penalties
   - how to solve guaranteed delivery with a new primitive "fair delivery" which requires a trusted third party
@@ -18,15 +18,15 @@ the plan:
 
 ---
 
-# Data Availability (or *Guaranteed Delivery*)
+# Data Availability Problem (or *Guaranteed Delivery Problem*)
 
-**Data Availability**: A client stores the data with a storage provider (or more) and they want to have a guarantee that the data is available (and it will be delivered at the time of request). (Note: this is the retrievability property in the DSN, see definition 2.3)
+**Data Availability Problem**: There is some data that is available on request.
+**Guaranteed Delivery Problem**: A client stores some data with a storage provider (or more) and they want to have a guarantee that the data can be retrieved on request. 
+**Guaranteed Retrieval Price Problem**: A client stores some data with a storage provider and they want to have a guarantee that the data can be retrieved on request and at an pre-established price.
 
-Note: This problem is equivalent to the problem of "guaranteed delivery". If a protocol can provides data availability, then, every client is guaranteed to get their file delivered on request.
+## Naive solution: 1-of-m honest(or rational) provider assumption
 
-## Current solution: 1-of-m honest(or rational) provider assumption
-
-A way to solve the data availability problem is to rely on the following assumption: a client will distribute the data to a sufficiently large set of providers `m` (instead of one), such that there is at least `1-of-m` honest (or rational) providers that is willing (or incentivized) to serve the data.
+A way to solve the data availability problem is to rely on the following assumption: a client will distribute the data to a sufficiently large set of providers `m`, such that there is at least `1-of-m` honest (or rational) providers that is willing (or incentivized) to serve the data.
 
 **Problems**
 - **Large m**: To guarantee availability, the client must store the data with multiple providers (at least `m`), and this might be have a high cost.
@@ -41,19 +41,20 @@ A way to solve the data availability problem is to rely on the following assumpt
 
 We now need to provide a different notion of data availability:
 
-A client stores the data with a storage provider (or more) and they want to have a guarantee that **either data is available (can be retrieved at the time of request), or the storage provider is penalized**. 
+A client stores the data with a storage provider (or more) and they want to have a guarantee that **either the data is available (can be retrieved at the time of request), or the storage provider is penalized**. 
 
 ### Fair Delivery
 A delivery of a file between a client and a provider is fair if there are two valid outcomes of the protocol:
-- Output 1: the client receives the file and the provider is not penalized
+- Output 1: the client receives the file
 - Output 2: the client does not receive the file and the provider is penalized
+- (Output 3: the client aborts, the client does not receive the file and the provider is not penalized)
 
 **Problem with fair delivery!**:
-This problem reduces to the fair exchange problem! There is no way we can achieve a fair delivery as described, without a trusted third party!
+This problem reduces to the fair exchange problem! There is no way we can achieve a fair delivery as described, without a trusted third party! Note: the fair delivery protocol can only be initiated by the client.
 
 ### Fair Delivery with Third Third Party (TTP)
 
-Here, I describe an optimistic "Fair Delivery" protocol with a trusted third party (TTP) in an optimistic setting (this means that the client or the provider invoke the trusted third party only in case of conflicts).
+We describe an optimistic "Fair Delivery" protocol with a trusted third party (TTP) in an optimistic setting (this means that the client or the provider invoke the trusted third party only in case of conflicts).
 
 **Protocol**:
 - Setup:
@@ -79,7 +80,7 @@ Here, I describe an optimistic "Fair Delivery" protocol with a trusted third par
 	    - **Output 1: Client has the file, provider is not penalized (great!)**
       - if Provider doesn't send the file before timeout:
         - TTP penalizes the collateral of the provider
-        - **Output 2: Client doesn't have the file, provider is penalized
+        - **Output 2: Client doesn't have the file, provider is penalized**
 
 #### Going around TTP using the blockchain
 
@@ -119,7 +120,7 @@ Instead of relying on the majority of the consensus in being the TTP, we can hav
 	    - **Output 1: Client has the file, provider is not penalized (great!)**
       - if Provider doesn't send the file before timeout:
         - Validators sign a penalization transaction and submit it to the smart contract, which penalizes provider
-        - **Output 2: Client doesn't have the file, provider is penalized
+        - **Output 2: Client doesn't have the file, provider is penalized**
 
 ## From Fair Delivery to File Contracts with guarantee retrieval price
 
