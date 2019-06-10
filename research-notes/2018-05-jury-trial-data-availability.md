@@ -21,7 +21,9 @@ The plan:
 # Data Availability Problem (or *Guaranteed Delivery Problem*)
 
 **Data Availability Problem**: There is some data that is available on request.
+
 **Guaranteed Delivery Problem**: A client stores some data with a storage provider (or more) and they want to have a guarantee that the data can be retrieved on request. 
+
 **Guaranteed Retrieval Price Problem**: A client stores some data with a storage provider and they want to have a guarantee that the data can be retrieved on request and at an pre-established price.
 
 ## Naive solution: 1-of-m honest(or rational) provider assumption
