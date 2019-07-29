@@ -61,9 +61,10 @@ def print_degrees():
         print("alpha %f - beta %f - degree d >= %d" % (alpha,beta,degree))
 
 def print_table():
-    target_degree = 8
+    target_degree = 6
     table = table_chung(target_degree)
-    print("chung's table has length %d" % len(table))
+    print("chung's table for target degree = %d" % target_degree)
+    print("chung's table length %d" % len(table))
     for pair in table:
         print("degree %d, alpha %f, beta %f, exp. factor %f" %
                 (target_degree,pair[0],pair[1],pair[1]/pair[0]))
