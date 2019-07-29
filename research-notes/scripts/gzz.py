@@ -59,6 +59,9 @@ class ZZTapering(ZZParams):
             acc += self.lambd / delta
         return acc
 
+    def online(self):
+        raise Exception("not implemented")
+
 
 
 def regularZZ():
