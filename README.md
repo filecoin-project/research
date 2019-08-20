@@ -235,7 +235,7 @@ If you want to dive into these topics, please see [CONTRIBUTING.md](CONTRIBUTING
 ## Community
 
 - Github over Google Docs!
-- [Slack](filecoinproject.slack.com):
+- Join the [Public Filecoin Slack](https://github.com/filecoin-project/community#chat):
   - General Filecoin Research: #fil-research
   - Proofs development: #fil-proofs
   - General Filecoin: #general
