@@ -48,7 +48,7 @@ Here is a list of the Filecoin project's research endeavours, we split them by p
 - [Area: Generic Blockchain Infrastructure](#area-generic-blockchain-infrastructure)
 - [Area: Primitives](#area-primitives)
 
-#### Area: Consensus
+### Area: Consensus
 
 This endeavour deals with the Filecoin consensus layer broadly. It encompassed projects dealing with precise constructions Filecoin uses or could use (like Expected Consensus or Single Secret Leader Election) as well as the broader classification of Storage-Power-based Consensus in the field, for instance in relation to PoW and PoS. See the [consensus repo](https://github.com/filecoin-project/consensus) for more.
 
@@ -131,7 +131,7 @@ This area deals with the transaction layer of the Filecoin protocol and encompas
 </table>
 
 
-## Area: Generic Blockchain Infrastructure
+### Area: Generic Blockchain Infrastructure
 
 We plan to improve the state of the art of generic blockchain constructions. As part of developing Filecoin, we've uncovered open problems that may interest the community at large.
 
@@ -167,7 +167,7 @@ We plan to improve the state of the art of generic blockchain constructions. As 
 </table>
 
 
-#### Area: Primitives
+### Area: Primitives
 
 Filecoin itself relies on the performance and security of cryptographic primitives. We quickly discuss the main open problems we are thinking about with regards to Filecoin primitives below.
 
@@ -214,9 +214,7 @@ Filecoin itself relies on the performance and security of cryptographic primitiv
   </tr>
 </table>
 
-
-
-#### Key Open Problems
+### Key Open Problems
 
 We break down a few open problems of high priority for the team below. Some have open [RFPs](https://github.com/protocol/research-RFPs). For all, we welcome any collaborations (potentially leading to new constructions, discoveries and publications). Please reach out at [filecoin-research@protocol.ai](filecoin-research@protocol.ai). 
 
