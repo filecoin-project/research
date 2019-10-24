@@ -18,6 +18,7 @@ This repository is the main hub leading to the various efforts in Filecoin Resea
   - [Area: Generic Blockchain Infrastructure](#area-generic-blockchain-infrastructure)
   - [Area: Primitives](#area-primitives)
   - [Area: Practical zk-SNARKs ](SNARK/SNARK.md)
+  - [Area: Practial PoRep](porep/porep.md)
   - [Key Open Problems](#key-open-problems)
 - [Contributing](#contributing)
 - [Community](#community)
